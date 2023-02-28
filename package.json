@@ -1,0 +1,19 @@
+{
+  "name": "peternewportfolio",
+  "version": "1.0.0",
+  "description": "Dream Website",
+  "default": "index.html",
+  "scripts": {
+    "start" : "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptnoire/dream-portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.3"
+  }
+}

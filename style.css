@@ -1,0 +1,207 @@
+:root {
+    --text-color-blue: #c2ffff;
+}
+
+body {
+    background-color: black;
+}
+
+a,
+a:visited {
+    color: beige;
+    font-family: "Space Mono", monospace;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: Heaters;
+    src: url(./src/Heaters.otf);
+}
+
+h2 {
+    color: var(--text-color-blue);
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+h3 {
+    color: beige;
+    font-family: "Space Mono", monospace;
+    font-size: 1rem;
+}
+
+.section {
+    background-color: black;
+    height: 80vh;
+    border: 1px solid white;
+}
+
+.my_name {
+    font-size: 5em;
+    font-family: Heaters;
+    color: var(--text-color-blue);
+    line-height: 0%;
+    text-align: center;
+    text-shadow: 0 0 10px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 40px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;
+    animation: flicker 1s forwards;
+}
+
+.pText {
+    text-align: center;
+    line-height: 0%;
+    color: var(--text-color-blue);
+    font-family: monospace;
+}
+
+.fa-solid {
+    font-size: 2rem;
+    color: var(--text-color-blue);
+}
+
+.navBar {
+    display: flex;
+    text-align: center;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.nav_link {
+    line-height: 0%;
+    transition: all .1s ease-out;
+    padding: 15px;
+    cursor: cell;
+}
+
+.theConsole_002 {
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* EFFECTS BELOW */
+
+
+/* Glitch Effect */
+.afterEffect {
+    text-shadow: -3px 0 2px #9f0c0c7c, 5px 0 2px #ea4aff7b, 0 3px 2px #00f2ff76, 0 -2px 0 #fff7007a;
+    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+/* Console Effect */
+.console {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: 50%;
+    max-width: 700px;
+    height: auto;
+    background: #66ccff48;
+    border: 4px outset #007bff92;
+    border-left: 1px outset #007bff92;
+    border-bottom: 1px outset #007bff92;
+    transition: transform .5s ease-out;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg) rotateY(-30deg);
+    box-shadow: 0 0 7px #66ccff79, 0 0 13px #66ccff6c, 0 0 18px #66ccff49, 0 0 23px #66ccff7a, 0 0 25px #66ccff6b, 0 0 30px #66ccff59;
+  }
+
+  .console::before,
+  .console::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border: inherit;
+    border-radius: inherit;
+    transform-style: preserve-3d;
+    box-shadow: inherit;
+  }
+
+  .console::before {
+    animation: flicker 1s forwards;
+    transform: translateZ(-100px);
+  }
+
+  .console::after {
+    animation: flicker .5s forwards;
+    transform: translateZ(-50px);
+  }
+
+  .console_002 {
+    margin-top: 3%;
+    margin-right: auto;
+    padding: 10px;
+    width: 50%;
+    max-width: 350px;
+    height: auto;
+    background: #66ccff48;
+    border: 4px outset #007bff92;
+    border-right: 1px outset #007bff92;
+    border-top: 1px outset #007bff92;
+    transition: transform .5s ease-out;
+    z-index: 2;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 7px #66ccff79, 0 0 13px #66ccff6c, 0 0 18px #66ccff49, 0 0 23px #66ccff7a, 0 0 25px #66ccff6b, 0 0 30px #66ccff59;
+  }
+
+
+
+/* Flicker Effect */
+.flicker1,
+.flicker2 {
+  text-shadow: 0 0 10px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 40px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;
+}
+
+.flicker1 { animation: flicker .4s forwards; }
+.flicker2 { text-align: justify; animation: flicker .6s forwards; }
+
+.glowstick { animation: glowstick 5s infinite };
+
+
+/* Keyframe Logs */
+  @keyframes glitch {
+    0% { transform: skew(0); }
+    20% { transform: skew(6deg); }
+    40% { transform: skew(-6deg); text-shadow: -4px 0 3px #9f0c0c7c, 6px 0 3px #ea4aff7b, 0 2px 1px #00f2ff76, 0 -3px 0 #fff7007a; }
+    60% { transform: skew(0); }
+    80% { transform: skew(-6deg); text-shadow: -6px 0 5px #9f0c0c7c, 8px 0 3px #ea4aff7b, 0 4px 2px #00f2ff76, 0 -5px 0 #fff7007a; }
+    100% { transform: skew(2deg); }
+  }
+
+  @keyframes flicker {
+    0% {opacity: 0.1;} 5% {opacity: 0.2;} 10% {opacity: 0.1;}
+    15% {opacity: 0.3;} 20% {opacity: 0.1;} 25% {opacity: 0.4;}
+    30% {opacity: 0.1;} 35% {opacity: 0.5;} 40% {opacity: 0.1;}
+    100% {opacity: 1;}
+  }
+
+  @keyframes glowstick {
+    0% {text-shadow: 0 0 2px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+
+    15% {text-shadow: 0 0 5px #66CCFF, 0 0 23px #66CCFF, 0 0 30px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+
+    30% {text-shadow: 0 0 8px #66CCFF, 0 0 24px #66CCFF, 0 0 32px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+
+    60% {text-shadow: 0 0 18px #66CCFF, 0 0 24px #66CCFF, 0 0 34px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+
+    90% {text-shadow: 0 0 10px #66CCFF, 0 0 26px #66CCFF, 0 0 36px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+
+    100% {text-shadow: 0 0 2px #66CCFF, 0 0 20px #66CCFF, 0 0 36px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+  }
+
+  .hidden {
+    display: none;
+    opacity: 0;
+  }
