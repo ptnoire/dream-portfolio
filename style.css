@@ -101,8 +101,8 @@ h3 {
 
 /* Glitch Effect */
 .afterEffect {
-    text-shadow: -3px 0 2px #9f0c0c7c, 5px 0 2px #ea4aff7b, 0 3px 2px #00f2ff76, 0 -2px 0 #fff7007a;
-    animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  text-shadow: -3px 0 2px #9f0c0c7c, 5px 0 2px #ea4aff7b, 0 3px 2px #00f2ff76, 0 -2px 0 #fff7007a;
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
 }
 
 /* Come Down */
@@ -183,24 +183,26 @@ h3 {
 
 .flicker1 { animation: flicker .4s forwards; }
 .flicker2 { text-align: justify; animation: flicker .6s forwards; }
-.flickerOff { animation: flickerOff .4s forwards };
+.flickerOff { animation: flickerOff .4s forwards; }
 
-/* Keyframe Logs */
-  @keyframes glitch {
-    0% { transform: skew(0); }
-    20% { transform: skew(6deg); }
-    40% { transform: skew(-6deg); text-shadow: -4px 0 3px #9f0c0c7c, 6px 0 3px #ea4aff7b, 0 2px 1px #00f2ff76, 0 -3px 0 #fff7007a; }
-    60% { transform: skew(0); }
-    80% { transform: skew(-6deg); text-shadow: -6px 0 5px #9f0c0c7c, 8px 0 3px #ea4aff7b, 0 4px 2px #00f2ff76, 0 -5px 0 #fff7007a; }
-    100% { transform: skew(2deg); }
-  }
+@keyframes glitch {
+  0% { transform: skew(0); }
+  20% { transform: skew(6deg); }
+  40% { transform: skew(-6deg); 
+    text-shadow: -4px 0 3px #9f0c0c7c, 6px 0 3px #ea4aff7b, 0 2px 1px #00f2ff76, 0 -3px 0 #fff7007a; }
+  60% { transform: skew(0); }
+  80% { transform: skew(-6deg); 
+    text-shadow: -6px 0 5px #9f0c0c7c, 8px 0 3px #ea4aff7b, 0 4px 2px #00f2ff76, 0 -5px 0 #fff7007a; }
+  100% { transform: skew(2deg); }
+}
 
-  @keyframes flicker {
+@keyframes flicker {
     0% {opacity: 0.1;} 5% {opacity: 0.2;} 10% {opacity: 0.1;}
     15% {opacity: 0.3;} 20% {opacity: 0.1;} 25% {opacity: 0.4;}
     30% {opacity: 0.1;} 35% {opacity: 0.5;} 40% {opacity: 0.1;}
     100% {opacity: 1;}
   }
+  
 
   @keyframes flickerOff {
     0% {opacity: 0.1;} 5% {opacity: 0.2;} 10% {opacity: 0.1;}
@@ -208,6 +210,7 @@ h3 {
     30% {opacity: 0.1;} 35% {opacity: 0.5;} 40% {opacity: 0.1;}
     100% {opacity: 0;}
   }
+  
 
   .hidden {
     display: none;
@@ -218,3 +221,4 @@ h3 {
     visibility: hidden;
     opacity: 0;
   }
+
