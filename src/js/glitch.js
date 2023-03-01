@@ -1,6 +1,7 @@
 import { theConsole } from './script.js'
 
 export const navLink = document.querySelectorAll('.nav_link');
+export const navBar = document.querySelector('.navBar');
 const letters = 'abcdefghijklmnopqrstuvwxyz!#$&+1234567890'
 
 
@@ -28,5 +29,7 @@ export const reset = function() {
     setTimeout(() => {
         theConsole.classList.remove('hidden');
         theConsole.classList.add('console');
+        navBar.classList.remove('moveUp');
+        // setTimeout(() => navBar.classList.remove('afterEffect'), 1000);
     }, 2000);
 }

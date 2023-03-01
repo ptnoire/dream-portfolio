@@ -64,6 +64,7 @@ h3 {
     text-align: center;
     align-items: baseline;
     justify-content: center;
+    transition: 1s;
 }
 
 .nav_link {
@@ -81,16 +82,34 @@ h3 {
     justify-content: space-evenly;
 }
 
+.typeText {
+    font-family: monospace;
+    color: rgb(200, 200, 200);
+}
+
 
 
 
 /* EFFECTS BELOW */
+
+.loadingScreen_002 {
+  margin-top: 5%;
+  font-size: 100px;
+  text-align: center;
+}
 
 
 /* Glitch Effect */
 .afterEffect {
     text-shadow: -3px 0 2px #9f0c0c7c, 5px 0 2px #ea4aff7b, 0 3px 2px #00f2ff76, 0 -2px 0 #fff7007a;
     animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+/* Come Down */
+
+.moveUp {
+  transform: translateY(-75%);
+  opacity: 0;
 }
 
 /* Console Effect */
@@ -156,8 +175,6 @@ h3 {
     box-shadow: 0 0 7px #66ccff79, 0 0 13px #66ccff6c, 0 0 18px #66ccff49, 0 0 23px #66ccff7a, 0 0 25px #66ccff6b, 0 0 30px #66ccff59;
   }
 
-
-
 /* Flicker Effect */
 .flicker1,
 .flicker2 {
@@ -166,9 +183,7 @@ h3 {
 
 .flicker1 { animation: flicker .4s forwards; }
 .flicker2 { text-align: justify; animation: flicker .6s forwards; }
-
-.glowstick { animation: glowstick 5s infinite };
-
+.flickerOff { animation: flickerOff .4s forwards };
 
 /* Keyframe Logs */
   @keyframes glitch {
@@ -187,21 +202,19 @@ h3 {
     100% {opacity: 1;}
   }
 
-  @keyframes glowstick {
-    0% {text-shadow: 0 0 2px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
-
-    15% {text-shadow: 0 0 5px #66CCFF, 0 0 23px #66CCFF, 0 0 30px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
-
-    30% {text-shadow: 0 0 8px #66CCFF, 0 0 24px #66CCFF, 0 0 32px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
-
-    60% {text-shadow: 0 0 18px #66CCFF, 0 0 24px #66CCFF, 0 0 34px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
-
-    90% {text-shadow: 0 0 10px #66CCFF, 0 0 26px #66CCFF, 0 0 36px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
-
-    100% {text-shadow: 0 0 2px #66CCFF, 0 0 20px #66CCFF, 0 0 36px #66CCFF, 0 0 35px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;}
+  @keyframes flickerOff {
+    0% {opacity: 0.1;} 5% {opacity: 0.2;} 10% {opacity: 0.1;}
+    15% {opacity: 0.3;} 20% {opacity: 0.1;} 25% {opacity: 0.4;}
+    30% {opacity: 0.1;} 35% {opacity: 0.5;} 40% {opacity: 0.1;}
+    100% {opacity: 0;}
   }
 
   .hidden {
     display: none;
+    opacity: 0;
+  }
+
+  .hidden2 {
+    visibility: hidden;
     opacity: 0;
   }
