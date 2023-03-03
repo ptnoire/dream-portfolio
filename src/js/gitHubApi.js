@@ -45,7 +45,6 @@ const renderData = function(data, pageNum = gitHubList.page) {
             profilePic: ele.owner.avatar_url,
         }
     })
-    console.log(gitHubList.results)
     clear(projectElement);
     displayData(pagination(pageNum));
 };

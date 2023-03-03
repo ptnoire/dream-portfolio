@@ -1,14 +1,19 @@
 const blogDiv = document.querySelector('.blog_section');
 
+export const clearBlog = function() {
+    blogDiv.innerHTML = '';
+}
+
 export const blogFetch = async function() {
     const retrieve = await fetch(`https://v1.nocodeapi.com/ptbcodin/medium/EVHwRLgGycjofWDE`)
     const data = await retrieve.json();
     console.log(data);
     renderData(data);
 }
-blogFetch();
+// blogFetch(); -> DO NOT ACTIVATE UNTIL WEBSITE IS LIVE, API DATA IS COSTLY.
 
 const renderData = function(data) {
+    clearBlog();
     data.map(el => {
         const postId = el.content.slice((el.content.indexOf('&postId=')), (el.content.indexOf(' width="1"')));
         console.log(postId);
