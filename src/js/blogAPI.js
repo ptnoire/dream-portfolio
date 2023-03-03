@@ -18,14 +18,14 @@ const renderData = function(data) {
                 <h1>${el.title}</h1>
             </div>
             <div class="blog_thumb">
-                <h3>SEO: ${el.category}</h3>
+                <ul><h3>SEO: </h3>${el.category.map(el => `<li>${el}</li>`).join("")}</ul>
             </div>
             <div class="blog_content">
                 <h3>${el.content.replaceAll(`<img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss${postId} width="1" height="1" alt="">`, '')}</h3>
             </div>
             <div class="blog_footer">
                 <h3>Published: ${new Date(el.published)}</h3>
-                <a href="${el.link}">Source</a>
+                <button><a href="${el.link}" target="_blank" rel="noopener noreferrer">source</a></button>
             </div>
         </li>
         `
