@@ -4,7 +4,7 @@
   "description": "Dream Website",
   "default": "index.html",
   "scripts": {
-    "start" : "parcel index.html",
+    "start": "parcel index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "parcel": "^2.8.3"
+    "parcel": "^2.8.3",
+    "rss-to-json": "^2.1.1"
   }
 }
