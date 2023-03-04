@@ -1,5 +1,6 @@
 :root {
   --text-color-blue: #c2ffff;
+  --text-color-orange: rgb(251, 217, 152);
 }
 
 body {
@@ -40,12 +41,14 @@ button {
 }
 
 .section {
-  background-color: black;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.4990371148459384) 0%, rgba(0,0,0,1) 100%);
   margin-left: auto;
   margin-right: auto;
   height: 80vh;
   width: 95vw;
   overflow: hidden;
+  animation: flicker .5s forwards;
 }
 
 .section_004,
@@ -99,7 +102,7 @@ button {
 .typeText2 {
   text-align: justify;
   font-family: monospace;
-  color: rgb(251, 217, 152);
+  color: var(--text-color-orange);
   text-shadow: 0 0 10px #ff973d, 0 0 20px #ff973d, 0 0 30px #ff973d, 0 0 40px #ff973d;
 }
 .typeText2 { text-align: center;}
@@ -108,7 +111,7 @@ button {
 .my_name2 {
   font-size: 5em;
   font-family: Heaters;
-  color: rgb(251, 217, 152);
+  color: var(--text-color-orange);
   line-height: 0%;
   text-align: center;
   text-shadow: 0 0 10px #ff973d, 0 0 20px #ff973d, 0 0 30px #ff973d, 0 0 40px #ff973d;
@@ -133,7 +136,7 @@ button {
 .pText2 {
   text-align: center;
   line-height: 0%;
-  color: rgb(255, 234, 194);
+  color: var(--text-color-orange);
   text-shadow: 0 0 10px #ff973d, 0 0 20px #ff973d, 0 0 30px #ff973d, 0 0 40px #ff973d;
   font-family: monospace;
 }
@@ -200,14 +203,27 @@ button {
   padding-bottom: 2vw;
 }
 
+.projects_div {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "feature__projects . gitList"
+    "feature__projects . gitList"
+    ". . ."; 
+}
+
 .feature__projects {
+  grid-area: feature__projects;
   background: #66ff6b37;
   border: 4px outset #00ff2f92;
-  margin-top: 3%;
+  margin-top: 10%;
   margin-left: 1%;
   color: rgb(255, 255, 255);
   font-family: "Space Mono", monospace;
   width: 700px;
+  height: 400px;
   text-align: center;
   transform-style: preserve-3d;
   transform: rotateX(15deg) rotateY(30deg);
@@ -255,13 +271,46 @@ button {
 }
 
 .gitList {
-  display: flex;
-  flex-direction: column;
+  grid-area: gitList;
 }
 
-.gitHub__item {
+
+
+.gitHub__item {  
+  border: 1px solid beige;
+  height: 200px;
   width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  margin-bottom: 50px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "git_item_title git_item_title git_item_title"
+    "git_item_description git_item_description git_item_buttons"
+    "git_item_updated git_item_updated git_item_buttons";
 }
+
+.git_item_title { grid-area: git_item_title; }
+.git_item_title h2 {
+  font-family: monospace;
+  color: var(--text-color-blue);
+}
+
+.git_item_buttons { 
+  grid-area: git_item_buttons;
+  width: 150px; 
+}
+
+.git_item_description { grid-area: git_item_description; }
+.git_item_description p {
+  color: var(--text-color-blue);
+  padding: 10px;
+}
+
+.git_item_updated { grid-area: git_item_updated; }
+
 
 .blog_post {
   margin: auto;
@@ -364,7 +413,17 @@ button {
   drop-shadow(2px 2px 0 rgb(115, 0, 255));
 }
 
-.form2 { grid-area: 2 / 1 / 3 / 2; }
+.form2 { 
+  border: 1px solid beige;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  overflow: hidden;
+  border-radius: 10px;
+  animation: fadeinDOWN 2s forwards;
+  grid-area: 2 / 1 / 3 / 2; 
+}
 
 .form3 { 
   text-align: center;
@@ -397,8 +456,22 @@ button {
 }
 
 .form4 { 
-  border: 1px solid purple;  
   grid-area: 3 / 1 / 4 / 2; 
+}
+.form4 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 0;
+  filter: 
+  drop-shadow(2px 2px 2px rgb(255, 255, 255)) 
+  drop-shadow(2px 2px 2px rgba(0, 255, 251, 0.607)) 
+  drop-shadow(2px 2px 2px rgba(124, 246, 255, 0.498));
+  animation: fadeinUP 2s forwards;
+}
+
+.form4 img {
+  width: 10vw;
+  height: auto;
 }
 
 textarea {
@@ -682,4 +755,102 @@ textarea {
 ::-webkit-scrollbar-thumb {
   background: rgb(139, 139, 139);
   border-radius: 30px;
+}
+
+
+
+/* 
+TESTING FLOATING CITY BELOW */
+
+.city {
+  /* mix-blend-mode: exclusion; */
+  position: absolute;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: #66ccff20;
+  border: 4px outset #007bff92;
+  transition: transform .5s ease-out;
+  z-index: -1;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 7px #66ccff79, 0 0 13px #66ccff6c, 0 0 18px #66ccff49, 0 0 23px #66ccff7a, 0 0 25px #66ccff6b, 0 0 30px #66ccff59;
+}
+
+.city::before,
+.city::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border: inherit;
+  border-radius: inherit;
+  transform-style: preserve-3d;
+  box-shadow: inherit;
+}
+.city::before {
+  transform: translateZ(-30px);
+}
+
+.city::after {
+  transform: translateZ(-60px);
+}
+
+.city1 {
+  height: 200px;
+  width: 100px;
+  top: -100px;
+  left: -250px;
+  transition: all 1s;
+  animation: floating 10s ease-in-out alternate infinite;
+}
+.city2 {
+  height: 200px;
+  width: 100px;
+  top: 500px;
+  left: -225px;
+  transition: all 1.5s;
+  animation: floating 5s ease-in-out alternate-reverse infinite;
+}
+.city3 {
+  height: 200px;
+  width: 100px;
+  top: 250px;
+  left: -400px;
+  transition: all 2s;
+  animation: floating 14s ease-in-out alternate infinite;
+}
+.city4 {
+  height: 200px;
+  width: 100px;
+  bottom: 0;
+  left: -700px;
+  transition: all 2.8s;
+  animation: floating 12s ease-in-out alternate infinite;
+}
+.city5 {
+  height: 200px;
+  width: 100px;
+  top: -250px;
+  left: -550px;
+  transition: all 3s;
+  animation: floating 8s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes floating {
+  0% { height: 20%; }
+  100% { height: 50%; }
+}
+
+@keyframes fadeinUP {
+  0% {transform: translateY(-100px); opacity: 0;}
+  100% {transform: translateY(-60px); opacity: 1;}
+}
+@keyframes fadeinDOWN {
+  0% {transform: translateY(100px); opacity: 0;}
+  100% {transform: translateY(50px); opacity: 1;}
 }

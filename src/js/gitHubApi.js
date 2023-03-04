@@ -114,12 +114,20 @@ const displayData = async function(data) {
     clear(projectElement);
     data.forEach(el => {
         const markup = `
-    <div class="console_003">
+    <div class="gitHub__item">
+        <div class="git_item_title">
             <h2>${el.title}</h2>
+        </div>
+        <div class="git_item_description">
             <p>${el.description}</p>
+        </div>
+        <div class="git_item_buttons">
             <a href="${el.link}">Source Material</a>
             <a href="${el.clone}">Clone</a>
+        </div>
+        <div class="git_item_updated">
             <h3>Last Updated: ${el.last_update}</h3>
+        </div>
     </div>
     `;
     projectElement.insertAdjacentHTML('afterbegin', markup)
