@@ -34,11 +34,25 @@ h3 {
 }
 
 button {
+  color: var(--text-color-blue);
   margin: 5px;
   background: #667dff48;
   border: 2px outset #007bffb5;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.395);
 }
+
+textarea {
+  background-color: rgba(0, 0, 0, 0.553);
+  border: none;
+  color: var(--text-color-blue);
+  resize: none;
+  width: 26vw;
+  height: 10vh;
+}
+
+/* Below Global =============================================== */
+/* Below Global =============================================== */
+/* Below Global =============================================== */
 
 .section {
   background: rgb(0,0,0);
@@ -51,8 +65,7 @@ button {
   animation: flicker .5s forwards;
 }
 
-.section_004,
-.section_003 {
+.section_004 {
   overflow-y: scroll;
 }
 
@@ -97,6 +110,11 @@ button {
   transform: scale(1.1);
   cursor: cell;
 }
+
+/* Section ABOUT ME =========================================== */
+/* Section ABOUT ME =========================================== */
+/* Section ABOUT ME =========================================== */
+
 
 .typeText,
 .typeText2 {
@@ -203,19 +221,65 @@ button {
   padding-bottom: 2vw;
 }
 
+/* Section PROJECTS ================================================= */
+/* Section PROJECTS ================================================= */
+/* Section PROJECTS ================================================= */
+
 .projects_div {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 2fr;
   gap: 0px 0px; 
   grid-template-areas: 
-    "feature__projects . gitList"
-    "feature__projects . gitList"
-    ". . ."; 
+    "feature_project_list project_pagination gitList "
+    "feature_project_list . gitList"
+    ". . gitList ";
+}
+
+.proj_left_title,
+.proj_right_title {
+  position: absolute;
+  z-index: 3;
+  top: 8%;
+}
+
+.proj_left_title {
+  left: 3%;
+}
+
+.proj_right_title {
+  right: 3%;
+}
+
+.feature_list {
+  position: absolute;
+  z-index: 3;
+  left: 3%;
+  bottom: 8%;
+}
+
+.payd_title {
+  font-size: 2rem;
+  letter-spacing: -4px;
+  font-family: 'Comfortaa', cursive;
+  color: #00C853;
+}
+
+.btn {
+  border-top: 2px solid blue;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  background: linear-gradient(0deg, rgba(0,0,0,0.804359243697479) 0%, rgba(42,42,42,0.6222864145658263) 69%, rgba(52,170,247,1) 97%);
+}
+
+.feature_project_list {
+  grid-area: feature_project_list;
+  height: auto;
+  overflow-y: scroll;
 }
 
 .feature__projects {
-  grid-area: feature__projects;
   background: #66ff6b37;
   border: 4px outset #00ff2f92;
   margin-top: 10%;
@@ -270,27 +334,115 @@ button {
   font-size: .7rem;
 }
 
+.project_pagination {
+  margin-top: 45%;
+  grid-area: project_pagination;
+  height: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 1s;
+}
+
+.project_pagination button {
+  height: 4.5vh;
+  width: auto;
+  line-height: 0;
+}
+
 .gitList {
+  margin-top: 10%;
   grid-area: gitList;
 }
 
-
-
 .gitHub__item {  
-  border: 1px solid beige;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  background: #66ccff47;
+  border: 4px outset #007bff92;
+  transition: transform .5s ease-out;
+  z-index: 2;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(-15deg);
+  box-shadow: 0 0 7px #66ccff79, 0 0 13px #66ccff6c, 0 0 18px #66ccff49, 0 0 23px #66ccff7a, 0 0 25px #66ccff6b, 0 0 30px #66ccff59;
+
   height: 200px;
   width: 600px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   grid-auto-flow: row;
   grid-template-areas:
     "git_item_title git_item_title git_item_title"
     "git_item_description git_item_description git_item_buttons"
     "git_item_updated git_item_updated git_item_buttons";
 }
+
+.gitHub__item::after,
+.gitHub__item::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #66ccff48;
+  border: inherit;
+  border-radius: inherit;
+  transform-style: preserve-3d;
+  box-shadow: inherit;
+  transition: all 1s;
+}
+
+.gitHub__item::before {
+  transform: translateZ(-25px);
+}
+
+.gitHub__item::after {
+  transform: translateZ(-50px);
+}
+
+.gitHub__item h1 {
+  color: var(--text-color-blue);
+  font-family: "Space Mono", monospace;
+  line-height: 0;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 40px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;
+}
+
+.gitHub__item p {
+  font-family: "Space Mono", monospace;
+  color: var(--text-color-blue);
+  font-size: .8rem;
+}
+
+.condense { 
+  background: #66ccff25;
+  width: 25vw;
+  margin-left: auto;
+  height: 3vh;
+  transition: all 1s;
+  margin-bottom: 5px;
+  transform: rotateX(-15deg) rotateY(-50deg) translateX(150px);
+  z-index: 1;
+  opacity: .4;
+  box-shadow: 0 0 7px #66ccff41, 0 0 13px #66ccff41, 0 0 18px #66ccff41, 0 0 23px #66ccff41, 0 0 25px #66ccff41, 0 0 30px #66ccff41;
+ }
+
+ .condense::before,
+ .condense::after {
+  display: none;
+ }
+
+.condense h1 { font-size: 1rem; }
+ .condense h2 { line-height: 0; }
+.condense p { display: none; }
+.condense h3 { display: none; }
+.condense a { display: none; }
+
 
 .git_item_title { grid-area: git_item_title; }
 .git_item_title h2 {
@@ -300,17 +452,39 @@ button {
 
 .git_item_buttons { 
   grid-area: git_item_buttons;
-  width: 150px; 
+  width: 150px;
+  padding: 5px;
+  text-align: right;
 }
+.git_item_buttons a { 
+  text-underline-offset: -25%;
+  cursor: cell;
+ }
 
-.git_item_description { grid-area: git_item_description; }
+.git_item_description { 
+  overflow-y: scroll;
+  grid-area: git_item_description;
+ }
 .git_item_description p {
-  color: var(--text-color-blue);
-  padding: 10px;
+  text-align: justify;
+  color: rgb(242, 253, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  text-shadow: 0 0 2px #66ccff8a, 0 0 3px #66ccff8a, 0 0 4px #66ccff8a, 0 0 5px #66ccff8a, 0 0 6px #66ccff8a, 0 0 7px #66ccff8a;
 }
 
-.git_item_updated { grid-area: git_item_updated; }
+.git_item_updated { 
+  grid-area: git_item_updated;
+  height: 50px;
+ }
 
+ .git_item_updated h3 {
+  font-size: .9rem;
+ }
+
+/* Section BLOG POSTS ================================================== */
+/* Section BLOG POSTS ================================================== */
+/* Section BLOG POSTS ================================================== */
 
 .blog_post {
   margin: auto;
@@ -384,6 +558,10 @@ button {
   width: 38vw;
   object-fit: cover;
 }
+
+/* Section CONTACT ME ======================================================= */
+/* Section CONTACT ME ======================================================= */
+/* Section CONTACT ME ======================================================= */
 
 .formDiv {
   margin-top: 5%;
@@ -464,7 +642,6 @@ button {
   line-height: 0;
   filter: 
   drop-shadow(2px 2px 2px rgb(255, 255, 255)) 
-  drop-shadow(2px 2px 2px rgba(0, 255, 251, 0.607)) 
   drop-shadow(2px 2px 2px rgba(124, 246, 255, 0.498));
   animation: fadeinUP 2s forwards;
 }
@@ -474,16 +651,11 @@ button {
   height: auto;
 }
 
-textarea {
-  background-color: rgba(0, 0, 0, 0.553);
-  border: none;
-  color: var(--text-color-blue);
-  resize: none;
-  width: 26vw;
-  height: 10vh;
-}
-
 /* =========EFFECTS BELOW=========== */
+/* =========EFFECTS BELOW=========== */
+/* =========EFFECTS BELOW=========== */
+
+
 .blink {
   position: absolute;
   bottom: 0;

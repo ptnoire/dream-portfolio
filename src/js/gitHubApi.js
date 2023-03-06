@@ -32,9 +32,9 @@ const featureProject1 = function(data) {
     `
 }
 
-const renderData = function(data, pageNum = gitHubList.page) {
+const renderData = async function(data, pageNum = gitHubList.page) {
     data.sort((a, b) => dateComparison(a,b))
-    gitHubList.results = data.map(ele => { 
+    gitHubList.results = data.map(ele => {
         const { full_name, html_url, description, updated_at, clone_url } = ele;
         return {
             title: full_name,
@@ -55,20 +55,20 @@ const dateComparison = function(a, b) {
     return secondDate - firstDate;
 }
 
-// const controlPagination = function(newPage) {
-//     gitHubList.page = newPage;
-//     displayData(pagination(gitHubList.page))
-// }
+const controlPagination = function(newPage) {
+    gitHubList.page = newPage;
+    displayData(pagination(gitHubList.page))
+}
 
-// const paginationButtonsContainer = document.querySelector('.pagination__project_list');
+const paginationButtonsContainer = document.querySelector('.project_pagination');
 
-// paginationButtonsContainer.addEventListener('click', function(e) {
-//         e.preventDefault();
-//         const btn = e.target.closest('.btn--inline');
-//         if(!btn) return;
-//         const goto = +btn.dataset.goto;
-//         controlPagination(goto);
-//     })
+paginationButtonsContainer.addEventListener('click', function(e) {
+        e.preventDefault();
+        const btn = e.target.closest('.btn');
+        if(!btn) return;
+        const goto = +btn.dataset.goto;
+        controlPagination(goto);
+    })
 
 const pagination = function(page = gitHubList.page) {
     gitHubList.page = page;
@@ -78,32 +78,36 @@ const pagination = function(page = gitHubList.page) {
 }
 
 const changePagination = function() {
+    const gatherEmAll = document.querySelectorAll('.gitHub__item');
+    gatherEmAll.forEach(el => el.classList.add('condense'));
+    const first = document.querySelector('.gitHub__item');
+    first.classList.remove('condense');
     const curPage = gitHubList.page;
     const numPages = Math.ceil(gitHubList.results.length / gitHubList.resultsPerPage);
 
     if (curPage === 1 && numPages > 1) {
         return `
-        <button data-goto="${curPage + 1}" class="btn">
-             <h2>Page ${curPage + 1}➡</h2>
+        <button data-goto="${curPage + 1}" class="btn flicker1">
+             <p>${curPage + 1}➡</p>
         </button>
         `
     }
 
     if(curPage === numPages && numPages > 1) {
         return `
-        <button data-goto="${curPage - 1}" class="btn">
-            <h2>⬅ Page ${curPage - 1}</h2>
+        <button data-goto="${curPage - 1}" class="btn flicker1">
+            <p>⬅${curPage - 1}</p>
         </button>
         `;
     }
 
     if(curPage < numPages) {
         return `
-        <button data-goto="${curPage - 1}"  class="btn">
-            <h2>⬅ Page ${curPage - 1}</h2>
+        <button data-goto="${curPage - 1}"  class="btn flicker1">
+            <p>⬅${curPage - 1}</p>
         </button>
-        <button data-goto="${curPage + 1}" class="btn">
-            <h2>Page ${curPage + 1}➡</h2>
+        <button data-goto="${curPage + 1}" class="btn flicker1">
+            <p>${curPage + 1}➡</p>
         </button>
         `;
     }
@@ -116,43 +120,36 @@ const displayData = async function(data) {
         const markup = `
     <div class="gitHub__item">
         <div class="git_item_title">
-            <h2>${el.title}</h2>
+            <h1>${el.title}</h1>
         </div>
         <div class="git_item_description">
             <p>${el.description}</p>
         </div>
         <div class="git_item_buttons">
-            <a href="${el.link}">Source Material</a>
-            <a href="${el.clone}">Clone</a>
+            <a href="${el.link}">+ Source Code</a><br>
+            <a href="${el.clone}">+ Clone</a>
         </div>
         <div class="git_item_updated">
-            <h3>Last Updated: ${el.last_update}</h3>
+            <h3>Last Push: ${new Date(el.last_update)}</h3>
         </div>
     </div>
     `;
     projectElement.insertAdjacentHTML('afterbegin', markup)
     });
-    const gatherEmAll = document.querySelectorAll('.console_003');
-    let transformer = 0;
-    gatherEmAll.forEach(el => {
-        el.style.transform = `translateX(${transformer}px) rotateX(-15deg) rotateY(-30deg)`;
-        el.style.transformStyle = `preserve-3d`;
-        transformer += 50;
-});
-    // clear(paginationButtonsContainer);
+    clear(paginationButtonsContainer);
     const buttons = changePagination();
-    // paginationButtonsContainer.insertAdjacentHTML('afterbegin', buttons)
+    paginationButtonsContainer.insertAdjacentHTML('afterbegin', buttons)
 }
 
 
 
-// projectElement.addEventListener('mouseover', function(e) {
-//     const target = e.target.closest('.gitHub__item');
-//     if(!target) return;
-//     const gitHubItems = document.querySelectorAll('.gitHub__item');
-//     gitHubItems.forEach(el => el.classList.add('condense'))
-//     target.classList.remove('condense');
-// })
+projectElement.addEventListener('mouseover', function(e) {
+    const target = e.target.closest('.gitHub__item');
+    if(!target) return;
+    const gitHubItems = document.querySelectorAll('.gitHub__item');
+    gitHubItems.forEach(el => el.classList.add('condense'))
+    target.classList.remove('condense');
+})
 
 
 gitHubData();
