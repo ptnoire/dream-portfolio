@@ -126,8 +126,8 @@ const displayData = async function(data) {
             <p>${el.description}</p>
         </div>
         <div class="git_item_buttons">
-            <a href="${el.link}">+ Source Code</a><br>
-            <a href="${el.clone}">+ Clone</a>
+            <a href="${el.link}" target="_blank" rel="noopener noreferrer">+ Source Code</a><br>
+            <a href="${el.clone}" target="_blank" rel="noopener noreferrer">+ Clone</a>
         </div>
         <div class="git_item_updated">
             <h3>Last Push: ${new Date(el.last_update)}</h3>

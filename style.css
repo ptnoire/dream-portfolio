@@ -111,6 +111,15 @@ textarea {
   cursor: cell;
 }
 
+.opening_text {
+  text-align: center;
+  color: var(--text-color-blue);
+  font-family: monospace;
+  text-shadow: 0 0 2px #ced7dc, 0 0 1px #ced7dc, 0 0 5px, 0 0 2px #ced7dc, 0 0 2px #ced7dc;
+  margin-top: 25%;
+  animation: fadeinUP 1s forwards;
+}
+
 /* Section ABOUT ME =========================================== */
 /* Section ABOUT ME =========================================== */
 /* Section ABOUT ME =========================================== */

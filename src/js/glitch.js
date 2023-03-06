@@ -3,6 +3,7 @@ import { theConsole } from './script.js'
 export const navLink = document.querySelectorAll('.nav_link');
 export const navBar = document.querySelector('.navBar');
 export const btmBar = document.querySelector('.btmNav');
+export const openingText = document.querySelector('.opening_text');
 const letters = 'abcdefghijklmnopqrstuvwxyz!#$&+1234567890'
 
 
@@ -28,6 +29,7 @@ export const wordWarp = function() {
 
 export const reset = function() {
     setTimeout(() => {
+        openingText.classList.add('hidden');
         theConsole.classList.remove('hidden');
         theConsole.classList.add('console');
         navBar.classList.remove('moveUp');
