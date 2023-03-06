@@ -59,11 +59,17 @@ textarea {
   background: linear-gradient(0deg, rgba(0,0,0,0.4990371148459384) 0%, rgba(0,0,0,1) 100%);
   margin-left: auto;
   margin-right: auto;
-  height: 80vh;
+  height: 82vh;
   width: 95vw;
   overflow: hidden;
   animation: flicker .5s forwards;
 }
+
+.section_000 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 
 .section_004 {
   overflow-y: scroll;
@@ -240,7 +246,7 @@ textarea {
   grid-template-rows: 1fr 1fr 2fr;
   gap: 0px 0px; 
   grid-template-areas: 
-    "feature_project_list project_pagination gitList "
+    "feature_project_list . gitList "
     "feature_project_list . gitList"
     ". . gitList ";
 }
@@ -275,11 +281,11 @@ textarea {
 }
 
 .btn {
-  border-top: 2px solid blue;
+  border-top: 2px solid rgb(0, 255, 255);
   border-left: none;
   border-right: none;
   border-bottom: none;
-  background: linear-gradient(0deg, rgba(0,0,0,0.804359243697479) 0%, rgba(42,42,42,0.6222864145658263) 69%, rgba(52,170,247,1) 97%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(42,42,42,0.6222864145658263) 69%, rgba(52,170,247,1) 97%);
 }
 
 .feature_project_list {
@@ -344,11 +350,10 @@ textarea {
 }
 
 .project_pagination {
-  margin-top: 45%;
-  grid-area: project_pagination;
-  height: 75px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  display: inline;
+  top: 3%;
+  right: 4%;
   transition: all 1s;
 }
 
@@ -356,6 +361,8 @@ textarea {
   height: 4.5vh;
   width: auto;
   line-height: 0;
+  border-radius: 10px;
+  font-family: monospace;
 }
 
 .gitList {
@@ -716,7 +723,7 @@ textarea {
   margin-right: auto;
   padding: 10px;
   width: 50%;
-  max-width: 700px;
+  max-width: 800px;
   height: auto;
   background: #66ccff48;
   border: 4px outset #007bff92;

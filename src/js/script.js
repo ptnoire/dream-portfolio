@@ -11,4 +11,4 @@ glitch.navLink.forEach(x => {
   x.addEventListener('mouseover', glitch.wordWarp)
 });
 
-glitch.reset();
+window.addEventListener('load', glitch.reset);

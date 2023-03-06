@@ -88,7 +88,7 @@ const changePagination = function() {
     if (curPage === 1 && numPages > 1) {
         return `
         <button data-goto="${curPage + 1}" class="btn flicker1">
-             <p>${curPage + 1}➡</p>
+             <p>Next ${curPage + 1}➡</p>
         </button>
         `
     }
@@ -96,7 +96,7 @@ const changePagination = function() {
     if(curPage === numPages && numPages > 1) {
         return `
         <button data-goto="${curPage - 1}" class="btn flicker1">
-            <p>⬅${curPage - 1}</p>
+            <p>⬅${curPage - 1} Prev</p>
         </button>
         `;
     }
@@ -104,10 +104,10 @@ const changePagination = function() {
     if(curPage < numPages) {
         return `
         <button data-goto="${curPage - 1}"  class="btn flicker1">
-            <p>⬅${curPage - 1}</p>
+            <p>⬅${curPage - 1} Prev</p>
         </button>
         <button data-goto="${curPage + 1}" class="btn flicker1">
-            <p>${curPage + 1}➡</p>
+            <p>Next ${curPage + 1}➡</p>
         </button>
         `;
     }
