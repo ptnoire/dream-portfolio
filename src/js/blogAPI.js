@@ -10,7 +10,8 @@ export const blogFetch = async function() {
     console.log(data);
     renderData(data);
 }
-// blogFetch(); -> DO NOT ACTIVATE UNTIL WEBSITE IS LIVE, API DATA IS COSTLY.
+// -> DO NOT ACTIVATE UNTIL WEBSITE IS LIVE, API DATA IS COSTLY.
+blogFetch(); 
 
 const renderData = function(data) {
     clearBlog();
