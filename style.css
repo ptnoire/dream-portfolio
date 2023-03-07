@@ -3,6 +3,21 @@
   --text-color-orange: rgb(251, 217, 152);
 }
 
+@font-face {
+  font-family: SpaceMono;
+  src: url(./src/SpaceMono.ttf);
+}
+
+@font-face {
+  font-family: Heaters;
+  src: url(./src/Heaters.otf);
+}
+
+@font-face {
+  font-family: Comforta;
+  src: url(./src/Comfortaa.ttf);
+}
+
 body {
   background-color: black;
   overflow: hidden;
@@ -11,25 +26,26 @@ body {
 a,
 a:visited {
   color: beige;
-  font-family: "Space Mono", monospace;
+  font-family: SpaceMono;
   font-size: .8em;
   text-decoration: none;
 }
 
-@font-face {
-  font-family: Heaters;
-  src: url(./src/Heaters.otf);
+h1,
+h2,
+h3,
+p {
+  font-family: SpaceMono;
 }
 
 h2 {
   color: var(--text-color-blue);
-  font-family: monospace;
   font-size: 1rem;
 }
 
 h3 {
   color: beige;
-  font-family: "Space Mono", monospace;
+  font-family: SpaceMono;
   font-size: 1rem;
 }
 
@@ -51,8 +67,6 @@ textarea {
 }
 
 /* Below Global =============================================== */
-/* Below Global =============================================== */
-/* Below Global =============================================== */
 
 .section {
   background: rgb(0,0,0);
@@ -65,12 +79,6 @@ textarea {
   animation: flicker .5s forwards;
 }
 
-.section_000 {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
 .section_004 {
   overflow-y: scroll;
 }
@@ -82,7 +90,6 @@ textarea {
 
 .navBar {
   display: flex;
-  text-align: center;
   align-items: baseline;
   justify-content: center;
   transition: 1s;
@@ -100,10 +107,8 @@ textarea {
   width: 20vw;
   margin-top: 1.5vh;
   display: flex;
-  text-align: center;
   align-items: baseline;
   justify-content: space-evenly;
-  opacity: 1;
   transition: 1s;
 }
 
@@ -117,6 +122,37 @@ textarea {
   cursor: cell;
 }
 
+@media only screen and (max-width: 1000px) {
+  .navBar {
+    justify-content: space-evenly;
+  }
+  
+  .nav_link {
+    padding: 10px;
+    cursor: cell;
+    font-size: .8rem;
+  }
+  
+  .btmNav {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 95vw;
+    transition: 1s;
+  }
+
+  .btmNav a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+  
+  .socialLogo {
+    transition: .5s;
+  }
+}
+
 .opening_text {
   text-align: center;
   color: var(--text-color-blue);
@@ -127,9 +163,6 @@ textarea {
 }
 
 /* Section ABOUT ME =========================================== */
-/* Section ABOUT ME =========================================== */
-/* Section ABOUT ME =========================================== */
-
 
 .typeText,
 .typeText2 {
@@ -195,6 +228,7 @@ textarea {
   margin-right: auto;
   margin-top: 5%;
 }
+
 .about1 { 
   margin-left: auto;
   margin-right: auto;
@@ -236,8 +270,52 @@ textarea {
   padding-bottom: 2vw;
 }
 
-/* Section PROJECTS ================================================= */
-/* Section PROJECTS ================================================= */
+@media only screen and (max-width: 1000px) {
+  .my_name {
+    font-size: 4rem;
+    color: var(--text-color-blue);
+    text-shadow: 0 0 10px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 40px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;
+  }
+
+  .section_002 {
+    overflow-y: scroll;
+  }
+
+  .about_me {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+  
+  .about1 { 
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about3 { 
+    width: 80vw;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .about4 { 
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+  }
+
+  .icons__bucket img {
+    height: 8vh;
+    width: auto;
+  }
+}
+
 /* Section PROJECTS ================================================= */
 
 .projects_div {
@@ -276,7 +354,7 @@ textarea {
 .payd_title {
   font-size: 2rem;
   letter-spacing: -4px;
-  font-family: 'Comfortaa', cursive;
+  font-family: Comforta;
   color: #00C853;
 }
 
@@ -299,8 +377,7 @@ textarea {
   border: 4px outset #00ff2f92;
   margin-top: 10%;
   margin-left: 1%;
-  color: rgb(255, 255, 255);
-  font-family: "Space Mono", monospace;
+  color: beige;
   width: 700px;
   height: 400px;
   text-align: center;
@@ -331,14 +408,14 @@ textarea {
 }
 
 .feature__projects::after {
-  animation: flicker 1s forwards;
+  animation: flicker 2s forwards;
   transform: translateZ(-100px);
 }
 
 .featureTitle {
   font-size: 5rem;
   letter-spacing: -8px;
-  font-family: 'Comfortaa', cursive;
+  font-family: Comforta;
   color: #00C853;
 }
 
@@ -423,14 +500,12 @@ textarea {
 
 .gitHub__item h1 {
   color: var(--text-color-blue);
-  font-family: "Space Mono", monospace;
   line-height: 0;
   font-size: 1.5rem;
   text-shadow: 0 0 10px #66CCFF, 0 0 20px #66CCFF, 0 0 30px #66CCFF, 0 0 40px #66CCFF, 0 0 50px #66CCFF, 0 0 60px #66CCFF;
 }
 
 .gitHub__item p {
-  font-family: "Space Mono", monospace;
   color: var(--text-color-blue);
   font-size: .8rem;
 }
@@ -492,14 +567,102 @@ textarea {
 .git_item_updated { 
   grid-area: git_item_updated;
   height: 50px;
- }
+}
 
  .git_item_updated h3 {
   font-size: .9rem;
- }
+}
 
-/* Section BLOG POSTS ================================================== */
-/* Section BLOG POSTS ================================================== */
+@media only screen and (max-width: 1200px) {
+  .section_003 {
+    overflow-y: scroll;
+  }
+
+  .projects_div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .proj_left_title,
+  .proj_right_title {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+  }
+
+  .feature_list {
+    display: none;
+  }
+
+  .feature__projects {
+    background: #66ff6b1c;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10vh;
+    width: 65vw;
+    height: auto;
+    text-align: center;
+    transform: rotateX(20deg) rotateY(0deg);
+  }
+  
+  .featureTitle {
+    font-size: 5rem;
+    letter-spacing: -8px;
+    font-family: Comforta;
+    color: #00C853;
+  }
+
+  .feature__projects p {
+    text-align: justify;
+  }
+
+  .project_pagination {
+    position: relative;
+    margin: auto;
+    display: inline;
+  }
+  
+  .gitList {
+    margin-top: 10%;
+    margin-bottom: 20%;
+  }
+  
+  .gitHub__item {
+    height: auto;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gitHub__item::before {
+    transform: translateZ(-25px);
+  }
+  
+  .gitHub__item::after {
+    transform: translateZ(-50px);
+  }
+  
+  .gitHub__item p {
+    font-size: .6rem;
+  }
+  
+  .condense { 
+    height: 3vh;
+    overflow: hidden;
+   }
+
+  .git_item_buttons {
+    text-align: left;
+  }
+  
+  .git_item_updated h3 {
+    font-size: .6rem;
+  }
+}
+
 /* Section BLOG POSTS ================================================== */
 
 .blog_post {
@@ -575,9 +738,34 @@ textarea {
   object-fit: cover;
 }
 
-/* Section CONTACT ME ======================================================= */
-/* Section CONTACT ME ======================================================= */
-/* Section CONTACT ME ======================================================= */
+@media only screen and (max-width: 1000px) {
+  .section_004 {
+    overflow-y: scroll;
+  }
+
+  .blog_post {
+    list-style: none;
+    margin-left: auto;
+    margin-right: 13%;
+    margin-bottom: 20px;
+    width: 70vw;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog_head h1 { 
+    font-size: 2rem;
+  }
+
+  .blog_thumb { 
+    display: none;
+  }
+  
+  .blog_content h3 { font-size: .8rem;}
+}
+
+/* Section CONTACT ME ===================================================== */
 
 .formDiv {
   margin-top: 5%;
@@ -599,7 +787,6 @@ textarea {
   margin-bottom: 50px;
 }
 .form1 h3 {
-  font-family: "Space Mono", monospace;
   font-size: 2rem;
   filter: grayscale(.5)
   drop-shadow(2px 2px 0 rgb(0, 81, 255)) 
@@ -667,8 +854,44 @@ textarea {
   height: auto;
 }
 
-/* =========EFFECTS BELOW=========== */
-/* =========EFFECTS BELOW=========== */
+@media only screen and (max-width: 1000px) {
+  .formDiv {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 80vh;
+    overflow-x: hidden;
+  }
+
+  .form1 h3 {
+    font-size: 1.5rem;
+  }
+  
+  .form2 { 
+    display: none;
+  }
+
+  .form3 input {
+    width: 20vw;
+  }
+
+  .form3 textarea {
+    width: 70vw;
+  }
+  
+  .form4 {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    right: 3%;
+  }
+  
+  .form4 img {
+    width: 20vw;
+    height: auto;
+  }
+}
+
 /* =========EFFECTS BELOW=========== */
 
 
@@ -693,7 +916,6 @@ textarea {
   margin-top: 5%;
   color: rgba(245, 245, 220, 0.615);
   font-family: monospace;
-  /* font-size: 100px; */
   text-align: center;
 }
 
@@ -875,6 +1097,32 @@ textarea {
   box-shadow: 0 0 7px #d9e2e679, 0 0 13px #d9e2e66c, 0 0 18px #d9e2e649, 0 0 23px #d9e2e67a, 0 0 25px #d9e2e66b, 0 0 30px #d9e2e659;
 }
 
+@media only screen and (max-width: 1000px) {
+  .console {
+    margin-top: 40%;
+    width: 70vw;
+    height: auto;
+    transform: rotateX(-10deg) rotateY(-10deg);
+    text-align: center;
+  }
+
+  .console_002 {
+    margin-top: 15%;
+    width: 70vw;
+    height: auto;
+  }
+
+  .console_005 {
+    margin-top: 10%;
+    width: 70vw;
+  }
+
+  .console_006 {
+    width: 75vw;
+    height: 20vh;
+  }
+}
+
 /* Flicker Effect */
 .flicker1,
 .flicker2 {
@@ -920,7 +1168,6 @@ textarea {
   100% { transform: translateY(-5%) rotateX(15deg) rotateY(10deg); }
 }
   
-
 .hidden {
   display: none;
   opacity: 0;
@@ -945,17 +1192,13 @@ textarea {
   border-radius: 30px;
 }
 
-
-
-/* 
-TESTING FLOATING CITY BELOW */
-
 .city {
-  /* mix-blend-mode: exclusion; */
   position: absolute;
   margin-top: 10%;
   margin-left: auto;
   margin-right: auto;
+  height: 200px;
+  width: 100px;
   padding: 10px;
   background: #66ccff20;
   border: 4px outset #007bff92;
@@ -989,49 +1232,50 @@ TESTING FLOATING CITY BELOW */
 }
 
 .city1 {
-  height: 200px;
-  width: 100px;
   top: -100px;
   left: -250px;
   transition: all 1s;
   animation: floating 10s ease-in-out alternate infinite;
 }
 .city2 {
-  height: 200px;
-  width: 100px;
   top: 500px;
   left: -225px;
   transition: all 1.5s;
   animation: floating 5s ease-in-out alternate-reverse infinite;
 }
 .city3 {
-  height: 200px;
-  width: 100px;
   top: 250px;
   left: -400px;
   transition: all 2s;
   animation: floating 14s ease-in-out alternate infinite;
 }
 .city4 {
-  height: 200px;
-  width: 100px;
   bottom: 0;
   left: -700px;
   transition: all 2.8s;
   animation: floating 12s ease-in-out alternate infinite;
 }
 .city5 {
-  height: 200px;
-  width: 100px;
   top: -250px;
   left: -550px;
   transition: all 3s;
   animation: floating 8s ease-in-out alternate-reverse infinite;
 }
 
+@media only screen and (max-width: 600px) {
+  .the_floating_city {
+    display: none;
+  }
+}
+
 @keyframes floating {
   0% { height: 20%; }
   100% { height: 50%; }
+}
+
+@keyframes stretching {
+  0% { width: 20%; }
+  100% { width: 50%; }
 }
 
 @keyframes fadeinUP {

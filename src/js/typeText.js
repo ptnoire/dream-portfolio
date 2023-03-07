@@ -9,6 +9,6 @@ export function type() {
   typeText.textContent = textToType.slice(0, index);
   index++;
   if (index <= textToType.length) {
-      setTimeout(type, 25);
+      setTimeout(type, 15);
   }
 }

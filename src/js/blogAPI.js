@@ -11,7 +11,7 @@ export const blogFetch = async function() {
     renderData(data);
 }
 // -> DO NOT ACTIVATE UNTIL WEBSITE IS LIVE, API DATA IS COSTLY.
-blogFetch(); 
+// blogFetch(); 
 
 const renderData = function(data) {
     clearBlog();
