@@ -1,11 +1,11 @@
 export const projectElement = document.querySelector('.gitList')
-export const featureElement = document.querySelector('.feature__projects')
+// export const featureElement = document.querySelector('.feature__projects')
 
 export const gitHubData = async function() {
     const retrieve = await fetch(`https://api.github.com/users/ptnoire/repos`)
     const data = await retrieve.json();
     renderData(data);
-    featureProject1(data);
+    // featureProject1(data);
 }
 
 let gitHubList = {
@@ -18,19 +18,19 @@ const clear = function(parentContainer) {
     parentContainer.innerHTML = ''
 }
 
-const featureProject1 = function(data) {
-    const payd = data.find(el => el.id === 597271140);
-    clear(featureElement);
-    featureElement.innerHTML = `
-    <h1 class="featureTitle">payd</h1>
-    <h3 class="flicker1">"A simple, no non-sense bill tracking app."</h3>
-    <p class="flicker1">This is a project that came to me while I was in the hospital, finding an app that does this simple task without a lot of extra unwanted things wasn't available. This app features a 'no-data' exchange system where your data will never and can not be sold, no sign up or login neccessary.</p>
-    <button><a href="https://ptnoire.github.io/PAYD-bill-tracker/" target="_blank" rel="noopener noreferrer">View App</a></button>
-    <button><a href="https://github.com/ptnoire/PAYD-bill-tracker" target="_blank" rel="noopener noreferrer">View Source Code</a></button>
-    <h3 class="flicker1">Project Started: ${new Date(payd.created_at)}</h3>
-    <h3 class="flicker1">Last Push: ${new Date(payd.pushed_at)}</h3>
-    `
-}
+// const featureProject1 = function(data) {
+//     const payd = data.find(el => el.id === 597271140);
+//     clear(featureElement);
+//     featureElement.innerHTML = `
+//     <h1 class="featureTitle">payd</h1>
+//     <h3 class="flicker1">"A simple, no non-sense bill tracking app."</h3>
+//     <p class="flicker1">This is a project that came to me while I was in the hospital, finding an app that does this simple task without a lot of extra unwanted things wasn't available. This app features a 'no-data' exchange system where your data will never and can not be sold, no sign up or login neccessary.</p>
+//     <button><a href="https://ptnoire.github.io/PAYD-bill-tracker/" target="_blank" rel="noopener noreferrer">View App</a></button>
+//     <button><a href="https://github.com/ptnoire/PAYD-bill-tracker" target="_blank" rel="noopener noreferrer">View Source Code</a></button>
+//     <h3 class="flicker1">Project Started: ${new Date(payd.created_at)}</h3>
+//     <h3 class="flicker1">Last Push: ${new Date(payd.pushed_at)}</h3>
+//     `
+// }
 
 const renderData = async function(data, pageNum = gitHubList.page) {
     data.sort((a, b) => dateComparison(a,b))

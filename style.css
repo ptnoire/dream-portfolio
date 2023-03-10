@@ -52,7 +52,7 @@ h3 {
 button {
   color: var(--text-color-blue);
   margin: 5px;
-  background: #667dff48;
+  background: #667dff96;
   border: 2px outset #007bffb5;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.395);
 }
@@ -317,16 +317,13 @@ textarea {
 }
 
 /* Section PROJECTS ================================================= */
-
+.section_003 { overflow-y: scroll; }
 .projects_div {
   display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-columns: 1fr 1fr;;
   gap: 0px 0px; 
   grid-template-areas: 
-    "feature_project_list . gitList "
-    "feature_project_list . gitList"
-    ". . gitList ";
+    "feature_project_list gitList"
 }
 
 .proj_left_title,
@@ -342,13 +339,6 @@ textarea {
 
 .proj_right_title {
   right: 3%;
-}
-
-.feature_list {
-  position: absolute;
-  z-index: 3;
-  left: 3%;
-  bottom: 8%;
 }
 
 .payd_title {
@@ -368,15 +358,14 @@ textarea {
 
 .feature_project_list {
   grid-area: feature_project_list;
-  height: auto;
-  overflow-y: scroll;
 }
 
 .feature__projects {
   background: #66ff6b37;
   border: 4px outset #00ff2f92;
   margin-top: 10%;
-  margin-left: 1%;
+  margin-left: 3%;
+  margin-bottom: 10%;
   color: beige;
   width: 700px;
   height: 400px;
@@ -417,6 +406,19 @@ textarea {
   letter-spacing: -8px;
   font-family: Comforta;
   color: #00C853;
+}
+.featureTitle img {
+  height: 175px;
+  width: 500px;
+  object-fit: cover;
+  border: 3px solid black;
+  border-radius: 30px;
+}
+
+.fp2 {
+  background: #f700ff26;
+  border: 4px outset #ff00ea92;
+  box-shadow: 0 0 7px #ff00ea79, 0 0 13px #ff00ea6c, 0 0 18px #ff00ea49, 0 0 23px #ff00ea7a, 0 0 25px #ff00ea6b, 0 0 30px #ff00ea59;
 }
 
 .feature__projects h3 {
@@ -577,7 +579,6 @@ textarea {
   .section_003 {
     overflow-y: scroll;
   }
-
   .projects_div {
     display: flex;
     flex-direction: column;
@@ -614,9 +615,21 @@ textarea {
     font-family: Comforta;
     color: #00C853;
   }
+  .featureTitle img {
+    height: 175px;
+    width: 200px;
+    object-fit: cover;
+    border: 3px solid black;
+    border-radius: 30px;
+  }
 
   .feature__projects p {
     text-align: justify;
+  }
+  .fp2 {
+    background: #f700ff26;
+    border: 4px outset #ff00ea92;
+    box-shadow: 0 0 7px #ff00ea79, 0 0 13px #ff00ea6c, 0 0 18px #ff00ea49, 0 0 23px #ff00ea7a, 0 0 25px #ff00ea6b, 0 0 30px #ff00ea59;
   }
 
   .project_pagination {
