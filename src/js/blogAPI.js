@@ -30,7 +30,7 @@ const renderData = function(data) {
                 <h3>${el.content.replaceAll(`<img src="https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss${postId} width="1" height="1" alt="">`, '')}</h3>
             </div>
             <div class="blog_footer">
-                <h3>Published: ${new Date(el.published)}</h3>
+                <h3>Published: ${new Date(el.published).toLocaleDateString()}</h3>
                 <button><a href="${el.link}" target="_blank" rel="noopener noreferrer">source</a></button>
             </div>
         </li>
