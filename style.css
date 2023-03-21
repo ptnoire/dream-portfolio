@@ -421,6 +421,13 @@ textarea {
   box-shadow: 0 0 7px #ff00ea79, 0 0 13px #ff00ea6c, 0 0 18px #ff00ea49, 0 0 23px #ff00ea7a, 0 0 25px #ff00ea6b, 0 0 30px #ff00ea59;
 }
 
+.fp3 {
+  background: #fff83624;
+  border: 4px outset #fff83692;
+  box-shadow: 0 0 7px #fff83679, 0 0 13px #fff8366c, 0 0 18px #fff83649, 0 0 23px #fff8367a, 0 0 25px #fff8366b, 0 0 30px #fff83659;
+}
+.fp3-title { margin-top: 30px; }
+
 .feature__projects h3 {
   font-size: .65rem;
 }
