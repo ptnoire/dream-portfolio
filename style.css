@@ -260,7 +260,7 @@ textarea {
 }
 
 .icons__bucket img {
-  filter: grayscale(.5)
+  filter:
     drop-shadow(2px 2px 0 rgb(0, 81, 255)) 
     drop-shadow(2px 2px 2px rgb(0, 208, 255)) 
     drop-shadow(2px 2px 0 rgb(115, 0, 255));
@@ -320,7 +320,7 @@ textarea {
 .section_003 { overflow-y: scroll; }
 .projects_div {
   display: grid; 
-  grid-template-columns: 1fr 1fr;;
+  grid-template-columns: 1fr 1fr;
   gap: 0px 0px; 
   grid-template-areas: 
     "feature_project_list gitList"
