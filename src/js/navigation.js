@@ -1,3 +1,4 @@
+import { blogFetch } from "./blogAPI.js";
 import { theConsole } from "./script.js";
 import * as typeText from './typeText.js';
 
@@ -91,6 +92,7 @@ BLOG_LINK.addEventListener('click', function() {
     angle1 = '-15deg';
     angle2 = '-20deg';
     transformerFunction(transformer, angle1, angle2);
+    blogFetch();
 })
 
 CONTACT_LINK.addEventListener('click', function() {
