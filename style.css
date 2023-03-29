@@ -318,18 +318,19 @@ textarea {
 
 /* Section PROJECTS ================================================= */
 .section_003 { overflow-y: scroll; }
-.s3_title { text-align: center; }
+.s3_title { text-align: center; margin-bottom: 50px; }
 
 .feature_project_list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 5px 10px;
+  gap: 0px 25px;
   grid-auto-flow: row;
   grid-template-areas:
     "fp_left fp_right";
   margin-left: 3%;
   margin-right: 3%;
+  margin-bottom: 25px;
 }
 
 .fp_left { grid-area: fp_left; }
@@ -352,7 +353,12 @@ textarea {
 .featureTitle { grid-area: featureTitle; }
 .featurePush { grid-area: featurePush; }
 .featureDesc { grid-area: featureDesc; text-align: justify; }
-.featureBtns { grid-area: featureBtns; }
+.featureBtns { 
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+  grid-area: featureBtns;
+ }
 
 .feature__blurb {
   border: 2px outset var(--text-color-blue);
@@ -363,6 +369,7 @@ textarea {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  opacity: .6;
   filter: grayscale(.8) 
   opacity(.9) 
   drop-shadow(2px 2px 2px rgb(0, 208, 255));
@@ -370,6 +377,7 @@ textarea {
 }
 
 .feature__blurb:hover img {
+  opacity: 1;
   filter: none;
   transition: all .5s;
 }
