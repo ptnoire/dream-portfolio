@@ -175,7 +175,7 @@ textarea {
 
 .my_name,
 .my_name2 {
-  font-size: 5em;
+  font-size: 5rem;
   font-family: Heaters;
   color: var(--text-color-orange);
   line-height: 0%;
@@ -233,6 +233,9 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   grid-area: about1; 
+}
+.about1 img {
+  width: 475px;
 }
 .about2 { 
   grid-area: about2; 
