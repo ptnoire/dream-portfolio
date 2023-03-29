@@ -66,10 +66,10 @@ HOME_LINK.addEventListener('click', function() {
 ABOUT_LINK.addEventListener('click', function() {
     const sectionDefine = SECTION_002;
     navigationFunction(sectionDefine);
-    typeText.clear();
-    setTimeout(() => {
-        typeText.type();
-    }, 1500);
+    // typeText.clear();
+    // setTimeout(() => {
+    //     typeText.type();
+    // }, 1500);
     transformer = 400;
     angle1 = '-15deg';
     angle2 = '40deg';

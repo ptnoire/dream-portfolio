@@ -34,6 +34,5 @@ export const reset = function() {
         theConsole.classList.add('console');
         navBar.classList.remove('moveUp');
         btmBar.classList.remove('moveDown');
-        // setTimeout(() => navBar.classList.remove('afterEffect'), 1000);
     }, 2000);
 }
