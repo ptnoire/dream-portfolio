@@ -22,7 +22,7 @@ const clear = function(parentContainer) {
 const renderData = async function(data, pageNum = gitHubList.page) {
     data.sort((a, b) => dateComparison(a,b))
     let language = [];
-    for(i=0; i<data.length;i++){
+    for(let i=0; i<data.length;i++){
         const lang = await gatherUrl(data[i].languages_url);
         language.push(lang);
     }
