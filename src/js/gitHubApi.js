@@ -52,7 +52,7 @@ const gatherUrl = async function(url) {
 const langToArray = function(obj) {
     let lang = [];
     if(Object.keys(obj)) {
-        for (i=0; i < Object.keys(obj).length; i++) {
+        for (let i=0; i < Object.keys(obj).length; i++) {
             console.log(Object.keys(obj)[i]);
             lang.push(String(`[${Object.keys(obj)[i]}: ${Object.values(obj)[i]}]`));
         }
