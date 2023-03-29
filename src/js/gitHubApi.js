@@ -38,7 +38,6 @@ const renderData = async function(data, pageNum = gitHubList.page) {
             language: langToArray(language[i]),
         }
     })
-    console.log(gitHubList.results);
     clear(projectElement);
     displayData(pagination(pageNum));
 };
@@ -53,7 +52,6 @@ const langToArray = function(obj) {
     let lang = [];
     if(Object.keys(obj)) {
         for (let i=0; i < Object.keys(obj).length; i++) {
-            console.log(Object.keys(obj)[i]);
             lang.push(String(`[${Object.keys(obj)[i]}: ${Object.values(obj)[i]}]`));
         }
     }
