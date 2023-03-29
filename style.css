@@ -468,9 +468,12 @@ textarea {
   .feature_project_list {
     display: flex;
     flex-direction: column;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 10px;
+    border: 2px solid var(--text-color-blue);
+    box-shadow: 0 0 7px #66ccff41, 0 0 13px #66ccff41, 0 0 18px #66ccff41, 0 0 23px #66ccff41, 0 0 25px #66ccff41, 0 0 30px #66ccff41;
   }
-
-  .feature__blurb { display: none; }
 
   .gitList {
     position: relative;
@@ -497,6 +500,10 @@ textarea {
     opacity: 1;
     transition: all 1s;
   }
+
+  .git_item_title { 
+    font-size: .7rem;
+   }
 
   .condense { 
     background: #66ccff6a;
