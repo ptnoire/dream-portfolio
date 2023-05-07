@@ -295,6 +295,10 @@ textarea {
     margin-right: auto;
   }
 
+  .about1 img {
+    width: 325px;
+  }
+
   .about3 { 
     width: 80vw;
     padding: 20px;
